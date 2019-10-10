@@ -46,26 +46,26 @@ Credentials will be provided for these services by the instructor:
 
 NOTE: The following instructions are for using Putty. You can also use other popular SSH tools such as [MobaXterm](https://mobaxterm.mobatek.net/) or [SmarTTY](http://smartty.sysprogs.com/)
 
-- Right click to download [this ppk key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.ppk) > Save link as > save to Downloads folder
+- Right click to download [this ppk key](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/cdf-workshop.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
-  - Connection > SSH > Auth > Private key for authentication > Browse... > Select hdf-workshop.ppk
-![Image](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/putty.png)
+  - Connection > SSH > Auth > Private key for authentication > Browse... > Select cdf-workshop.ppk
+![Image](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/putty.png)
 
 - Create a new seession called `cdf-workshop`
    - For the Host Name use: centos@IP_ADDRESS_OF_EC2_NODE
    - Click "Save" on the session page before logging in
 
-![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/putty-session.png)
+![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/putty-session.png)
 
 
 ### To connect from Linux/MacOSX laptop
 
 - SSH into your EC2 node using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/hdf-workshop.pem)  > Save link as > save to Downloads folder
+- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/cdf-workshop.pem)  > Save link as > save to Downloads folder
 - Copy pem key to ~/.ssh dir and correct permissions
     ```
-    cp ~/Downloads/hdf-workshop.pem ~/.ssh/
-    chmod 400 ~/.ssh/hdf-workshop.pem
+    cp ~/Downloads/cdf-workshop.pem ~/.ssh/
+    chmod 400 ~/.ssh/cdf-workshop.pem
     ```
  - Login to the ec2 node of the you have been assigned by replacing IP_ADDRESS_OF_EC2_NODE below with EC2 node IP Address (your instructor will provide this)
     ```
@@ -116,8 +116,8 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
  Our final flow for this lab will look like the following:
 
-  ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/lab1.png)
-  A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/templates/HDF-Workshop_Lab1-Flow.xml)
+  ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/lab1.png)
+  A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/templates/CDF-Workshop_Lab1-Flow.xml)
 
 
   - Step 1: Add a ConnectWebSocket processor to the cavas
@@ -126,7 +126,7 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:
-  ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/jsonpath.png)
+  ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/jsonpath.png)
 
     The properties to add are:
     ```
@@ -183,8 +183,8 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
 # Lab 3
 
-  ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/lab3.png)
-  A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/templates/MiNiFi_Flow.xml)
+  ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/lab3.png)
+  A template for this flow can be found [here](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/templates/MiNiFi_Flow.xml)
 
 
 ## Getting started with MiNiFi ##
@@ -239,7 +239,7 @@ Now we should be ready to create our flow. To do this do the following:
 8. Now SCP the template you downloaded to the ````/tmp```` directory on your EC2 instance. If you are using Windows you will need to download WinSCP (https://winscp.net/eng/download.php)
 9.  We are now ready to setup MiNiFi. However before doing that we need to convert the template to YAML format which MiNiFi uses. To do this we need to do the following:
 
-    * Navigate to the minifi-toolkit directory (/usr/hdf/current/minifi-toolkit-0.4.0)
+    * Navigate to the minifi-toolkit directory (/usr/cdf/current/minifi-toolkit-0.4.0)
     * Transform the template that we downloaded using the following command:
 
       ````sudo bin/config.sh transform <INPUT_TEMPLATE> <OUTPUT_FILE>````
@@ -253,7 +253,7 @@ Now we should be ready to create our flow. To do this do the following:
 11. That is it, we are now ready to start MiNiFi. To start MiNiFi from a command prompt execute the following:
 
   ```
-  cd /usr/hdf/current/minifi-0.4.0
+  cd /usr/cdf/current/minifi-0.4.0
   sudo bin/minifi.sh start
   tail -f logs/minifi-app.log
   ```
@@ -262,7 +262,7 @@ You should be able to now go to your NiFi flow and see data coming in from MiNiF
 
 You may tail the log of the MiNiFi application by
    ```
-   tail -f /usr/hdf/current/minifi/minifi-0.4.0/logs/minifi-app.log
+   tail -f /usr/cdf/current/minifi/minifi-0.4.0/logs/minifi-app.log
    ```
 If you see error logs such as "the remote instance indicates that the port is not in a valid state",
 it is because the Input Port has not been started.
@@ -350,7 +350,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
   - Step 1: Add a PublishKafka_1_0 processor to the canvas.
   - Step 2: Add a routing for the success relationship of the ReplaceText processor to the PublishKafka_1_0 processor added in Step 1 as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/publishkafka.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/publishkafka.png)
   - Step 3: Configure the topic and broker for the PublishKafka_1_0 processor,
   where topic is meetup_rsvp_raw and broker is demo.hortonworks.com:6667.
 
@@ -395,16 +395,16 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 2. Adding the Schema to the Schema Registry
   - Step 1: Open a browser and navigate to the Schema Registry UI. You can get to this from the either the ```Quick Links``` drop down in Ambari, as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/registry_quick_link.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/registry_quick_link.png)
 
     or by going to ````http://<EC2_NODE>:17788````
   - Step 2: Create Meetup RSVP Schema in the Schema Registry
     1. Click on “+” button to add new schemas. A window called “Add New Schema” will appear.
     2. Fill in the fields of the ````Add Schema Dialog```` as follows:
 
-        ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/add_schema_dialog.png)
+        ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/add_schema_dialog.png)
 
-        For the Schema Text you can download it [here](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/meetup_rsvp.asvc) and either copy and paste it or upload the file.
+        For the Schema Text you can download it [here](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/meetup_rsvp.asvc) and either copy and paste it or upload the file.
 
         Once the schema information fields have been filled and schema uploaded, click **Save**.
 
@@ -414,13 +414,13 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
   - Step 2: Add a routing for the success relationship of the ReplaceText processor to the UpdateAttrbute processor added in Step 1.
   - Step 3: Configure the UpdateAttribute processor as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/update_attribute_schema_name.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/update_attribute_schema_name.png)
 
   - Step 4: Add a JoltTransformJSON processor to the canvas.
   - Step 5: Add a routing for the success relationship of the UpdateAttribute processor to the JoltTransformJSON processor added in Step 5.
   - Step 6: Configure the JoltTransformJSON processor as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/jolt_transform_config.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/jolt_transform_config.png)
 
     The JSON used in the 'Jolt Specification' property is as follows:
 
@@ -438,24 +438,24 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
   - Step 10: Add a routing for the success relationship of the JoltTransformJSON processor to the PublishKafkaRecord_1_0 processor added in Step 9.
   - Step 11: Configure the PublishKafkaRecord_1_0 processor to look like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/publishkafka_record_configuration.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/publishkafka_record_configuration.png)
 
 
   - Step 12: When you configure the JsonTreeReader and AvroRecordSetWriter, you will first need to configure a schema registry controller service. The schema registry controller service we are going to use is the 'HWX Schema Registry', it should be configured as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/hwx_schema_registry_config.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/hwx_schema_registry_config.png)
 
   - Step 13: Configure the JsonTreeReader as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/json_tree_reader_config.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/json_tree_reader_config.png)
 
   - Step 14: Configure the AvroRecordSetWriter as shown below:
 
-      ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/avro_recordset_writer.png)
+      ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/avro_recordset_writer.png)
 
     After following the above steps this section of your flow should look like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/update_jolt_kafka_section.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/update_jolt_kafka_section.png)
 
 
 4. Start the NiFi flow
@@ -491,37 +491,37 @@ For this lab we are going to break from the Meetup RSVP data and use a fictious 
   - Step 5: Start this section of the NiFi flow.
   - Step 6: Go to your Ambari dashboard and navigate to the SAM UI, by selecting the following URL:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/SAM_URL_Link.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/SAM_URL_Link.png)
 
   - Step 7: You should now see the SAM UI that looks like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_default.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/sam_default.png)
 
   - Step 8: To inspect the application, click the icon in the top right hadn corner of the applicaiton and chose 'Edit', as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_app_edit.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/sam_app_edit.png)
 
   - Step 9: You shoudl now see a UI that looks like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/sam_edit.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/sam_edit.png)
 
     Spend a moment to explore and dig into any of the components. Notice at the bottom right hand corner is states "Status Active", this indicates that the application is running.
 
   - Step 10: Verify that Storm the application is running using Storm Mon. To do this go back to your Ambari Dashboard and chose the "Storm Mon link" as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/storm_mon_link.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/storm_mon_link.png)
 
     That should bring up a UI that looks like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/storm_mon_ui.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/storm_mon_ui.png)
 
   - Step 11: We are now ready to explore Superset, to do this go back to the Ambari dashboard and from the Drui service chose the "Quick Link" to "Superset" as shown below:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/superset_link.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/superset_link.png)
 
   - Step 12: Exploring Superset -- following the link in Step 11 should take you to a UI that looks like the following:
 
-    ![Image](https://github.com/apsaltis/HDF-Workshop/raw/master/superset_welcome.png)
+    ![Image](https://github.com/apsaltis/CDF-Workshop/raw/master/superset_welcome.png)
 
   **NOTE: If you are prompted for a password use admin/admin**
 

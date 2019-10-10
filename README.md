@@ -395,7 +395,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 2. Adding the Schema to the Schema Registry
   - Step 1: Open a browser and navigate to the Schema Registry UI. You can get to this from the either the ```Quick Links``` drop down in Ambari, as shown below:
 
-    ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/registry_quick_link.png)
+    ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/registry_quick_link_cdf.png)
 
     or by going to ````http://<EC2_NODE>:17788````
   - Step 2: Create Meetup RSVP Schema in the Schema Registry

@@ -125,7 +125,8 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
       - Set WebSocket Client ID to your favorite number.
       ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/web_socket.png)
       
-      Controller Service Configs:
+      **Controller Service Configs:**
+      
       ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/JettyWebsocket_client.png)
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
@@ -188,7 +189,7 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 3. How can you change the file name that Json is saved as from PutFile?
 3. Why do you think we are splitting out the RSVP's by group?
 4. Why are we using the Update Attribute processor to add a mime.type?
-4. How can you cange the flow to get the member photo from the Json and download it.
+4. How can you change the flow to get the member photo from the Json and download it.
 
 
 ------------------

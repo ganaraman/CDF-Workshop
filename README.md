@@ -126,7 +126,7 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
       ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/web_socket.png)
       
       Controller Service Configs:
-      ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/JettyWebscoket_client.png)
+      ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/JettyWebscoket client.png)
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:

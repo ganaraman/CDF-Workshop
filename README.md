@@ -321,7 +321,7 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
 
   - In the second shell window connect a producer:
 ````
-bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic first-topic
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 ````
 
 
@@ -366,7 +366,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
     ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/publishkafka.png)
   - Step 3: Configure the topic and broker for the PublishKafka_1_0 processor,
-  where topic is meetup_rsvp_raw and broker is demo.hortonworks.com:6667.
+  where topic is meetup_rsvp_raw and broker is localhost:9092.
 
 
 3. Start the NiFi flow

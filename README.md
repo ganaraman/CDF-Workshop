@@ -220,7 +220,7 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
   ```
   To
   ```
-    nifi.remote.input.socket.port=10010
+    nifi.remote.input.socket.port=9090
   ```
 * Restart NiFi via Cloudera Manager
 

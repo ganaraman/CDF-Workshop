@@ -51,7 +51,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
   - Connection > SSH > Auth > Private key for authentication > Browse... > Select hdf-workshop.ppk
 ![Image](https://raw.githubusercontent.com/apsaltis/HDF-Workshop/master/putty.png)
 
-- Create a new seession called `hdf-workshop`
+- Create a new seession called `cdf-workshop`
    - For the Host Name use: centos@IP_ADDRESS_OF_EC2_NODE
    - Click "Save" on the session page before logging in
 
@@ -69,7 +69,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
     ```
  - Login to the ec2 node of the you have been assigned by replacing IP_ADDRESS_OF_EC2_NODE below with EC2 node IP Address (your instructor will provide this)
     ```
-     ssh -i  ~/.ssh/hdf-workshop.pem centos@IP_ADDRESS_OF_EC2_NODE
+     ssh -i  ~/.ssh/cdf-workshop.pem centos@IP_ADDRESS_OF_EC2_NODE
 
     ```
 
@@ -81,14 +81,15 @@ NOTE: The following instructions are for using Putty. You can also use other pop
 
 #### Login to Ambari
 
-- Login to Ambari web UI by opening http://{YOUR_IP}:8080 and log in with **admin/StrongPassword**
+- Login to Cloudera Manager web UI by opening http://{YOUR_IP}:7180 and log in with **admin/admin**
 
 - You will see a list of Hadoop components running on your node on the left side of the page
-  - They should all show green (ie started) status. If not, start them by Ambari via 'Service Actions' menu for that service
+  - They should all show green (ie started) status. If not, start them by Cloudera Manager via 'Service Actions' menu for that service
 
 #### NiFi Install
 
-- NiFi is installed at: /usr/hdf/current/nifi
+- NiFi is installed at: /opt/cloudera/parcels/CFM directory
+      
 
 
 
@@ -208,7 +209,7 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
   ```
     nifi.remote.input.socket.port=10000
   ```
-* Restart NiFi via Ambari
+* Restart NiFi via Cloudera Manager
 
 
 Now we should be ready to create our flow. To do this do the following:
@@ -276,10 +277,10 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
 
 1. Creating a topic
   - Step 1: Open an SSH connection to your EC2 Node.
-  - Step 2: Naviagte to the Kafka directory (````/usr/hdf/current/kafka-broker````), this is where Kafka is installed, we will use the utilities located in the bin directory.
+  - Step 2: Naviagte to the Kafka directory (````/opt/cloudera/parcels/CDH/````), this is where Kafka is installed, we will use the utilities located in the bin directory.
 
     ````
-    #cd /usr/hdf/current/kafka-broker/
+    #cd /opt/cloudera/parcels/CDH/
     ````
 
   - Step 3: Create a topic using the kafka-topics.sh script
@@ -326,10 +327,10 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 ## Integrating Kafka with NiFi
 1. Creating the topic
   - Step 1: Open an SSH connection to your EC2 Node.
-  - Step 2: Naviagte to the Kafka directory (````/usr/hdf/current/kafka-broker````), this is where Kafka is installed, we will use the utilities located in the bin directory.
+  - Step 2: Naviagte to the Kafka directory (````/opt/cloudera/parcels/CDH/````), this is where Kafka is installed, we will use the utilities located in the bin directory.
 
     ````
-    #cd /usr/hdf/current/kafka-broker/
+    #cd /opt/cloudera/parcels/CDH/
     ````
 
   - Step 3: Create a topic using the kafka-topics.sh script
@@ -372,10 +373,10 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 ## Integrating the Schema Registry
 1. Creating the topic
   - Step 1: Open an SSH connection to your EC2 Node.
-  - Step 2: Naviagte to the Kafka directory (````/usr/hdf/current/kafka-broker````), this is where Kafka is installed, we will use the utilities located in the bin directory.
+  - Step 2: Naviagte to the Kafka directory (````/opt/cloudera/parcels/CDH/````), this is where Kafka is installed, we will use the utilities located in the bin directory.
 
     ````
-    #cd /usr/hdf/current/kafka-broker/
+    #cd /opt/cloudera/parcels/CDH/
     ````
 
   - Step 3: Create a topic using the kafka-topics.sh script

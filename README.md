@@ -199,7 +199,7 @@ In this lab, we will learn how to configure MiNiFi to send data to NiFi:
 
 
 ## Setting up the Flow for NiFi
-**NOTE:** Before starting NiFi we need to enable Site-to-Site communication. To do that we will use Ambari to update the required configuration. In Cloudera Manager the below property values can be found at ````http://<EC2_NODE>:7180/cmf/services/19/config```` .
+**NOTE:** Before starting NiFi we need to enable Site-to-Site communication. To do that we will use Cloudera Manager to update the required configuration. In Cloudera Manager the below property values can be found at ````http://<EC2_NODE>:7180/cmf/services/19/config```` .
 
 * Change:
   ```

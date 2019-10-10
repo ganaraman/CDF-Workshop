@@ -48,7 +48,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
 
 - Right click to download [this ppk key](https://raw.githubusercontent.com/ganaraman/CDF-Workshop/master/cdf-workshop.ppk) > Save link as > save to Downloads folder
 - Use putty to connect to your node using the ppk key:
-  - Connection > SSH > Auth > Private key for authentication > Browse... > Select cdf-workshop.ppk
+  - Connection > SSH > Auth > Private key for authentication > Browse... > Select **cdf-workshop.ppk**
 ![Image](https://raw.githubusercontent.com/ganaraman/CDF-Workshop/master/putty.png)
 
 - Create a new seession called `cdf-workshop`

@@ -129,6 +129,9 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
       ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/JettyWebsocket_client.png)
   - Step 2: Add an UpdateAttribute procesor
     - Configure it to have a custom property called ``` mime.type ``` with the value of ``` application/json ```
+    
+    ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/UpdateAttribute_Processor.png)
+    
   - Step 3. Add an EvaluateJsonPath processor and configure it as shown below:
   ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/jsonpath.png)
 
@@ -153,6 +156,9 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
     venue.name    $.venue.venue_name
     ```
   - Step 4: Add a SplitJson processor and configure the JsonPath Expression to be ```$.group.group_topics ```
+  
+  ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/Split_Json.png)
+  
   - Step 5: Add a ReplaceText processor and configure the Search Value to be ```([{])([\S\s]+)([}])``` and the Replacement Value to be
     ```
     {
@@ -172,6 +178,8 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
       }
     }
     ```
+    ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/Replace_text.png)
+    
   - Step 6: Add a PutFile processor to the canvas and configure it to write the data out to ```/tmp/rsvp-data```
 
 ##### Questions to Answer

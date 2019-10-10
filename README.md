@@ -61,7 +61,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
 ### To connect from Linux/MacOSX laptop
 
 - SSH into your EC2 node using below steps:
-- Right click to download [this pem key](https://raw.githubusercontent.com/apsaltis/CDF-Workshop/master/cdf-workshop.pem)  > Save link as > save to Downloads folder
+- Right click to download [this pem key](https://raw.githubusercontent.com/ganaraman/CDF-Workshop/master/cdf-workshop.pem)  > Save link as > save to Downloads folder
 - Copy pem key to ~/.ssh dir and correct permissions
     ```
     cp ~/Downloads/cdf-workshop.pem ~/.ssh/
@@ -79,7 +79,7 @@ NOTE: The following instructions are for using Putty. You can also use other pop
     ```
 
 
-#### Login to Ambari
+#### Login to Cloudera Manager
 
 - Login to Cloudera Manager web UI by opening http://{YOUR_IP}:7180 and log in with **admin/admin**
 

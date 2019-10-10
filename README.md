@@ -38,7 +38,7 @@
 Credentials will be provided for these services by the instructor:
 
 * SSH
-* Ambari
+* Cloudera Manager
 
 ## Use your Cluster
 

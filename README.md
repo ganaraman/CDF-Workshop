@@ -6,13 +6,6 @@
   - Extracting JSON elements we are interested in
   - Splitting JSON into smaller fragments
   - Writing JSON to File System
-  <!--
-- [Lab 3](#lab-3) - MiNiFi
-  - Enable Site2Site in NiFi
-  - Designing the MiNiFi Flow
-  - Preparing the flow
-  - Running MiNiFi
--->
 - [Lab 3](#lab-3) - Kafka Basics
   - Creating a topic
   - Producing data
@@ -29,7 +22,13 @@
 <!-- - [Lab 7](#lab-7) - Tying it all together with SAM
   - Creating the Streaming Application
   - Watching the dashboard -->
-
+  <!--
+- [Lab 3](#lab-3) - MiNiFi
+  - Enable Site2Site in NiFi
+  - Designing the MiNiFi Flow
+  - Preparing the flow
+  - Running MiNiFi
+-->
 
 ---------------
 

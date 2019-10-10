@@ -6,20 +6,22 @@
   - Extracting JSON elements we are interested in
   - Splitting JSON into smaller fragments
   - Writing JSON to File System
+  <!--
 - [Lab 3](#lab-3) - MiNiFi
   - Enable Site2Site in NiFi
   - Designing the MiNiFi Flow
   - Preparing the flow
   - Running MiNiFi
-- [Lab 4](#lab-4) - Kafka Basics
+-->
+- [Lab 3](#lab-3) - Kafka Basics
   - Creating a topic
   - Producing data
   - Consuming data
-- [Lab 5](#lab-5) - Integrating Kafka with NiFi
+- [Lab 4](#lab-4) - Integrating Kafka with NiFi
   - Creating the Kafka topic
   - Adding the Kafka producer processor
   - Verifying the data is flowing
-- [Lab 6](#lab-6) - Integrating the Schema Registry
+- [Lab 5](#lab-5) - Integrating the Schema Registry
   - Creating the Kafka topic
   - Adding the Meetup Avro Schema
   - Sending Avro data to Kafka
@@ -193,7 +195,7 @@ To get started we need to consume the data from the Meetup RSVP stream, extract 
 
 
 ------------------
-
+<!--
 # Lab 3
 
   ![Image](https://github.com/ganaraman/CDF-Workshop/raw/master/lab3.png)
@@ -282,8 +284,8 @@ it is because the Input Port has not been started.
 Start the port and you will see messages being accumulated in its downstream queue.
 
 ------------------
-
-# Lab 4
+-->
+# Lab 3
 
 ## Kafka Basics
 In this lab we are going to explore creating, writing to and consuming Kafka topics. This will come in handy when we later integrate Kafka with NiFi and Streaming Analytics Manager.
@@ -335,7 +337,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
 ------------------
 
-# Lab 5
+# Lab 4
 
 ## Integrating Kafka with NiFi
 1. Creating the topic
@@ -381,7 +383,7 @@ bin/kafka-console-producer.sh --broker-list demo.hortonworks.com:6667 --topic fi
 
 ------------------
 
-# Lab 6
+# Lab 5
 
 ## Integrating the Schema Registry
 1. Creating the topic

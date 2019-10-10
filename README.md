@@ -261,7 +261,7 @@ Now we should be ready to create our flow. To do this do the following:
 
       ````sudo bin/config.sh transform /temp/MiNiFi_Flow.xml config.yml````
 
-10. Next copy the ````config.yml```` to the ````minifi-0.5.0/conf```` directory. That is the file that MiNiFi uses to generate the nifi.properties file and the flow.xml.gz for MiNiFi.
+10. Next copy the ````config.yml```` to the ````/usr/cdf/current/minifi-0.5.0/conf```` directory. That is the file that MiNiFi uses to generate the nifi.properties file and the flow.xml.gz for MiNiFi.
 
 11. That is it, we are now ready to start MiNiFi. To start MiNiFi from a command prompt execute the following:
 

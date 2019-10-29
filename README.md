@@ -294,7 +294,7 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
   - Step 2: Naviagte to the Kafka directory (````/opt/cloudera/parcels/CDH/````), this is where Kafka is installed, we will use the utilities located in the bin directory.
 
     ````
-    #cd /opt/cloudera/parcels/CDH/
+    cd /opt/cloudera/parcels/CDH/
     ````
 
   - Step 3: Create a topic using the kafka-topics.sh script
@@ -344,7 +344,7 @@ bin/kafka-console-producer --broker-list `hostname`:9092 --topic first-topic
   - Step 2: Naviagte to the Kafka directory (````/opt/cloudera/parcels/CDH/````), this is where Kafka is installed, we will use the utilities located in the bin directory.
 
     ````
-    #cd /opt/cloudera/parcels/CDH/
+    cd /opt/cloudera/parcels/CDH/
     ````
 
   - Step 3: Create a topic using the kafka-topics.sh script

@@ -297,7 +297,7 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
     cd /opt/cloudera/parcels/CDH/
     ````
 
-  - Step 3: Create a topic using the kafka-topics.sh script
+  - Step 3: Create a topic using the kafka-topics script
     ````
     bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic first-topic
 
@@ -347,7 +347,7 @@ bin/kafka-console-producer --broker-list `hostname`:9092 --topic first-topic
     cd /opt/cloudera/parcels/CDH/
     ````
 
-  - Step 3: Create a topic using the kafka-topics.sh script
+  - Step 3: Create a topic using the kafka-topics script
     ````
     bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_raw
 
@@ -393,7 +393,7 @@ bin/kafka-console-producer --broker-list `hostname`:9092 --topic first-topic
     #cd /opt/cloudera/parcels/CDH/
     ````
 
-  - Step 3: Create a topic using the kafka-topics.sh script
+  - Step 3: Create a topic using the kafka-topics script
     ````
     bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_avro
 

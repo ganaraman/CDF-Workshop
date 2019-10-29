@@ -299,7 +299,7 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
 
   - Step 3: Create a topic using the kafka-topics.sh script
     ````
-    bin/kafka-topics.sh --zookeeper localhost:2181 --create --partitions 1 --replication-factor 1 --topic first-topic
+    bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic first-topic
 
     ````
 
@@ -307,21 +307,21 @@ In this lab we are going to explore creating, writing to and consuming Kafka top
 
   - Step 4:	Ensure the topic was created
     ````
-    bin/kafka-topics.sh --list --zookeeper localhost:2181
+    bin/kafka-topics --list --zookeeper `hostname`:2181
     ````
 
 2. Testing Producers and Consumers
   - Step 1: Open a second terminal to your EC2 node and navigate to the Kafka directory
   - In one shell window connect a consumer:
   ````
- bin/kafka-console-consumer.sh --zookeeper localhost:2181 --from-beginning --topic first-topic
+ bin/kafka-console-consumer --bootstrap-server `hostname`:9092 --from-beginning --topic first-topic
 ````
 
     Note: using –from-beginning will tell the broker we want to consume from the first message in the topic. Otherwise it will be from the latest offset.
 
   - In the second shell window connect a producer:
 ````
-bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
+bin/kafka-console-producer --broker-list `hostname`:9092 --topic first-topic
 ````
 
 
@@ -349,7 +349,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 
   - Step 3: Create a topic using the kafka-topics.sh script
     ````
-    bin/kafka-topics.sh --zookeeper localhost:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_raw
+    bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_raw
 
     ````
 
@@ -357,7 +357,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 
   - Step 4:	Ensure the topic was created
     ````
-    bin/kafka-topics.sh --list --zookeeper localhost:2181
+    bin/kafka-topics --list --zookeeper `hostname`:2181
     ````
 
 2. Integrating NiFi
@@ -373,7 +373,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 4. In a terminal window to your EC2 node and navigate to the Kafka directory and connect a consumer to the ````meetup_rsvp_raw```` topic:
 
     ````
-    bin/kafka-console-consumer.sh --zookeeper localhost:2181 --from-beginning --topic meetup_rsvp_raw
+    bin/kafka-console-consumer --bootstrap-server `hostname`:9092 --from-beginning --topic meetup_rsvp_raw
     ````
 
 
@@ -395,7 +395,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 
   - Step 3: Create a topic using the kafka-topics.sh script
     ````
-    bin/kafka-topics.sh --zookeeper localhost:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_avro
+    bin/kafka-topics --zookeeper `hostname`:2181 --create --partitions 1 --replication-factor 1 --topic meetup_rsvp_avro
 
     ````
 
@@ -403,7 +403,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 
   - Step 4:	Ensure the topic was created
     ````
-    bin/kafka-topics.sh --list --zookeeper localhost:2181
+    bin/kafka-topics --list --zookeeper `hostname`:2181
     ````
 
 2. Adding the Schema to the Schema Registry
@@ -476,7 +476,7 @@ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic first-topic
 5. In a terminal window to your EC2 node and navigate to the Kafka directory and connect a consumer to the ````meetup_rsvp_avro```` topic:
 
     ````
-    bin/kafka-console-consumer.sh --zookeeper localhost:2181 --from-beginning --topic meetup_rsvp_avro
+    bin/kafka-console-consumer --bootstrap-server `hostname`:9092 --from-beginning --topic meetup_rsvp_avro
     ````
 
 
